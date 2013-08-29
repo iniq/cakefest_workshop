@@ -18,3 +18,23 @@ Stack Trace:
 #3 C:\wamp\www\cake239\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-08-29 18:06:45 Error: Fatal Error (1): Class 'CakeEmail' not found in [C:\wamp\www\jobadvisor\jobadvisor\Model\Company.php, line 42]
+2013-08-29 18:06:45 Error: [FatalErrorException] Class 'CakeEmail' not found
+Request URL: /companies/add
+Stack Trace:
+#0 C:\wamp\www\cake239\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Class 'CakeEmai...', 'C:\wamp\www\job...', 42)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'CakeEmai...', 'C:\wamp\www\job...', 42, Array)
+#2 C:\wamp\www\cake239\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Class 'CakeEmai...', 'C:\wamp\www\job...', 42, Array)
+#3 C:\wamp\www\cake239\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-08-29 18:39:59 Error: Fatal Error (4): syntax error, unexpected 'functon' (T_STRING), expecting variable (T_VARIABLE) in [C:\wamp\www\jobadvisor\jobadvisor\Controller\CompaniesController.php, line 105]
+2013-08-29 18:39:59 Error: [FatalErrorException] syntax error, unexpected 'functon' (T_STRING), expecting variable (T_VARIABLE)
+Request URL: /companies/related/1
+Stack Trace:
+#0 C:\wamp\www\cake239\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\job...', 105)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\job...', 105, Array)
+#2 C:\wamp\www\cake239\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\job...', 105, Array)
+#3 C:\wamp\www\cake239\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
