@@ -49,4 +49,25 @@ class Job extends AppModel {
 		)
 	);
 
+	public $validate = array(
+		// only accept *new* Jobs on weekdays
+		'name' => array(	// validating on the name fields just for funsies, because this rule actually doesn't care about any of the fields. Error will show as associated to 'name' field, though
+			'todayIsWorkday' => array(
+				'rule' => array('todayIsWorkday'),
+				'message' => "You can't create new jobs on the weekend",
+				'on' => 'create',
+				'last' => true,
+				)
+			)
+		);
+
+	public function todayIsWorkday($check) {
+		$weekday = date('w', $this->getNow());	// see below for "getNow()?!"
+		return ($weekday != 0 && $weekday != 6);
+	}
+
+	// created this so that we can easily test/mock different times!
+	protected function getNow() {
+		return strtotime('now');
+	}
 }
