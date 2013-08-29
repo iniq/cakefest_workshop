@@ -1,0 +1,10 @@
+2013-08-29 17:22:48 Error: [MissingPluginException] Plugin DebugKit could not be found.
+Exception Attributes: array (
+  'plugin' => 'DebugKit',
+)
+Stack Trace:
+#0 C:\wamp\www\jobadvisor\jobadvisor\Config\bootstrap.php(74): CakePlugin::load('DebugKit')
+#1 C:\wamp\www\cake239\lib\Cake\Core\Configure.php(94): include('C:\wamp\www\job...')
+#2 C:\wamp\www\cake239\lib\Cake\bootstrap.php(171): Configure::bootstrap(true)
+#3 C:\wamp\www\jobadvisor\jobadvisor\webroot\index.php(96): include('C:\wamp\www\cak...')
+#4 {main}
