@@ -4,4 +4,7 @@ tmp/*
 app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
+jobadvisor/tmp/*
+jobadvisor/[Cc]onfig/core.php
+jobadvisor/[Cc]onfig/database.php
 !empty
