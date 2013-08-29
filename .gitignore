@@ -7,4 +7,7 @@ app/[Cc]onfig/database.php
 jobadvisor/tmp/*
 jobadvisor/[Cc]onfig/core.php
 jobadvisor/[Cc]onfig/database.php
+jobadvisor/jobadvisor/tmp/*
+jobadvisor/jobadvisor/[Cc]onfig/core.php
+jobadvisor/jobadvisor/[Cc]onfig/database.php
 !empty
