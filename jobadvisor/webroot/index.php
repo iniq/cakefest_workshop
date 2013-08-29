@@ -63,7 +63,7 @@ if (!defined('APP_DIR')) {
  * The following line differs from its sibling
  * /app/webroot/index.php
  */
-define('CAKE_CORE_INCLUDE_PATH', 'C:' . DS . 'wamp' . DS . 'www' . DS . 'cake239' . DS . 'lib');
+define('CAKE_CORE_INCLUDE_PATH', 'C:' . DS . 'wamp' . DS . 'www' . DS . 'jobadvisor' . DS . 'lib');
 
 /**
  * Editing below this line should NOT be necessary.
