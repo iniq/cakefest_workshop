@@ -47,6 +47,12 @@ class Cv extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		),
+		'UnfinishedPosition' => array(
+			'className' => 'Experience',
+			'conditions' => array(
+				'UnfinishedPosition.end_date > NOW()',
+			),
 		)
 	);
 
