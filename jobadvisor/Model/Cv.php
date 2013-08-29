@@ -8,6 +8,10 @@ App::uses('AppModel', 'Model');
  * @property Job $Job
  */
 class Cv extends AppModel {
+	public $displayField = 'display_name';
+	public $virtualFields = array(
+		'display_name' => "CONCAT(Cv.last_name, ', ', Cv.first_name)"
+		);
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

@@ -7,6 +7,10 @@ App::uses('AppModel', 'Model');
  */
 class Company extends AppModel {
 
+	public $displayField = 'display_name';
+	public $virtualFields = array(
+		'display_name' => "CONCAT(Company.name, '-', Company.id)"
+		);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
