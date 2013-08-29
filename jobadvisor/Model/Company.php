@@ -11,7 +11,7 @@ class Company extends AppModel {
 
 	public $displayField = 'display_name';
 	public $virtualFields = array(
-		'display_name' => "CONCAT(Company.name, '-', Company.id)"
+		'display_name' => "CONCAT(Company.name, '-', Company.id)"	// can also do in the __construct() to use $this->alias. See docs.
 		);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -48,5 +48,12 @@ class Company extends AppModel {
 				'default'
 				);
 		}
+	}
+
+	public function getRelatedJobs($companyID) {
+		return $this->Job->find('all', array(
+			'conditions' => array('Job.company_id' => $companyID),
+			'order' => array('Job.created DESC')
+			));
 	}
 }

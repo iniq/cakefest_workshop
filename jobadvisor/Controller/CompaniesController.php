@@ -101,4 +101,10 @@ class CompaniesController extends AppController {
 		$this->Session->setFlash(__('Company was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function related($companyID) {
+		$related = $this->Company->getRelatedJobs($companyID);
+		debug($related);
+		$this->_stop();
+	}
 }
