@@ -40,8 +40,9 @@
 class EmailConfig {
 
 	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'you@localhost',
+		'transport' => 'Debug',	// email to file when debug is on!
+		'log' => true,
+		'from' => 'derek+cakefest@tribehr.com',
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);

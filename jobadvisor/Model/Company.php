@@ -35,4 +35,16 @@ class Company extends AppModel {
 		)
 	);
 
+
+	public function afterSave(boolean $created) {
+		if ($created) {
+			// Move me into a queue!
+			CakeEmail::deliver(
+				'derek+cakefest@tribehr.com',
+				__('New company created id: %s', $this->data['Company']['id']),
+				__('New company was created'),
+				'default'
+				);
+		}
+	}
 }
