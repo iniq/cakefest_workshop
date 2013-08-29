@@ -8,6 +8,9 @@ App::uses('AppModel', 'Model');
  */
 class Job extends AppModel {
 
+	// custom finds will work in paginator, too!
+	// #fuckyeah
+	public $findMethods = array('latest' => true);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -69,5 +72,21 @@ class Job extends AppModel {
 	// created this so that we can easily test/mock different times!
 	protected function getNow() {
 		return strtotime('now');
+	}
+
+	// Implement the custom find defined under the 'latest' key in $findMethods
+	// #fuckyeah
+	protected function _findLatest($state, $query, $results = array()) {
+		if ($state === 'before') {	// there's an 'after' state as well!
+			if (empty($query['order'])) {
+				$query['order'] = array("{$this->alias}.created" => 'desc');
+			}
+			if (empty($query['limit'])) {
+				$query['limit'] = 10;
+			}
+			return $query;
+		}
+
+		return $results;
 	}
 }
