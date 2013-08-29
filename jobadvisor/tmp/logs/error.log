@@ -8,3 +8,13 @@ Stack Trace:
 #2 C:\wamp\www\cake239\lib\Cake\bootstrap.php(171): Configure::bootstrap(true)
 #3 C:\wamp\www\jobadvisor\jobadvisor\webroot\index.php(96): include('C:\wamp\www\cak...')
 #4 {main}
+2013-08-29 17:43:11 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\wamp\www\jobadvisor\jobadvisor\Model\Company.php, line 12]
+2013-08-29 17:43:11 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /jobs/add
+Stack Trace:
+#0 C:\wamp\www\cake239\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\wamp\www\job...', 12)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\wamp\www\job...', 12, Array)
+#2 C:\wamp\www\cake239\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\wamp\www\job...', 12, Array)
+#3 C:\wamp\www\cake239\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
