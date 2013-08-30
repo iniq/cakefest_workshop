@@ -123,8 +123,24 @@ class CvsController extends AppController {
 			'email' => 'pparker@example.com',
 			'bio' => 'Bio goes here...',
 			);
+		// $this->Cv->create();
+		// $saveResult = $this->Cv->save($data);	// returns the record in an array
+
+		$complexData = array(
+			'Cv' => array(
+				'first_name' => 'Miss',
+				'last_name' => 'Shepard',
+				'telephone' => '123443',
+				'email' => 'shep@n7.com',
+				'bio' => 'Bio goes here...',
+				),
+			'Education' => array(
+				array('name' => 'first', 'description' => 'first description'),
+				array('name' => 'second', 'description' => 'second description')
+				)
+			);
 		$this->Cv->create();
-		$saveResult = $this->Cv->save($data);
+		$saveResult = $this->Cv->saveAssociated($complexData);	// now contains a bool result
 		debug($saveResult);
 		$this->autoRender = false;
 	}
