@@ -1,3 +1,14 @@
+<?php $this->extend('/Common/twocolumn'); // then, just implement filling in some blocks or whatever instead of what you see below now ?>
+<?php $this->start('left-column'); ?>
+<div>I am in the left column</div>
+<?php $this->end('left-column'); ?>
+<?php $this->start('right-column'); ?>
+<div>I am in the right column</div>
+<?php $this->end('right-column'); ?>
+
+
+
+
 <div class="educations view">
 <h2><?php echo __('Education'); ?></h2>
 	<dl>
