@@ -32,4 +32,6 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+	public $actsAs = array('Containable');
+	// public $recursive= -1;	// <= we want this! But it will break a lot of the scaffolding. So yeah, don't use the scaffolding. Yay TribeHR!
 }

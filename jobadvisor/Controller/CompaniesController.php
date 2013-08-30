@@ -107,4 +107,27 @@ class CompaniesController extends AppController {
 		debug($related);
 		$this->_stop();
 	}
+
+	public function containable_examples() {
+		$phpCompanies = $this->Company->find('all', array(
+			'contain' => array('Job' => array(
+				'conditions' => array('Job.description LIKE' => '%PHP%'),
+				'fields' => array('Job.name'),
+				'order' => array('Job.name' => 'asc')
+				))
+			));
+		debug($phpCompanies);
+
+		$companiesAndEverythingInTheirJobs = $this->Company->find('all', array(
+			'contain' => array('Job' => array(
+				'Cv' => array(
+					'fields' => array('Cv.first_name', 'Cv.last_name'),
+					),
+				'fields' => array('id', 'name'),
+				)),
+			));
+		debug($companiesAndEverythingInTheirJobs);
+
+		$this->autoRender = false;
+	}
 }
