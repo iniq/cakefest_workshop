@@ -1,6 +1,6 @@
 <?php
 
-App::uses('FormHelper');
+App::uses('FormHelper', 'View/Helper');
 
 class AppFormHelper extends FormHelper {
 	public function select($fieldName, $options = array(), $attributes = array()) {
