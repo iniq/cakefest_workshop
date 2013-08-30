@@ -114,4 +114,18 @@ class CvsController extends AppController {
 		$this->Session->setFlash(__('Cv was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function saving_examples() {
+		$data = array(
+			'first_name' => 'Peter',
+			'last_name' => 'Parker',
+			'telephone' => '123443',
+			'email' => 'pparker@example.com',
+			'bio' => 'Bio goes here...',
+			);
+		$this->Cv->create();
+		$saveResult = $this->Cv->save($data);
+		debug($saveResult);
+		$this->autoRender = false;
+	}
 }
