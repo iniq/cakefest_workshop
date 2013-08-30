@@ -1,6 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
-App::uses('CakeEmail', 'Network/Email');
+// App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Company Model
@@ -13,6 +13,8 @@ class Company extends AppModel {
 	public $virtualFields = array(
 		'display_name' => "CONCAT(Company.name, '-', Company.id)"	// can also do in the __construct() to use $this->alias. See docs.
 		);
+
+	public $actsAs = array('CreationReport');
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -37,18 +39,18 @@ class Company extends AppModel {
 		)
 	);
 
-
-	public function afterSave(boolean $created) {
-		if ($created) {
-			// Move me into a queue!
-			CakeEmail::deliver(
-				'derek+cakefest@tribehr.com',
-				__('New company created id: %s', $this->data['Company']['id']),
-				__('New company was created'),
-				'default'
-				);
-		}
-	}
+	// Refactored to CreationReportBehavior
+	// public function afterSave(boolean $created) {
+	// 	if ($created) {
+	// 		// Move me into a queue!
+	// 		CakeEmail::deliver(
+	// 			'derek+cakefest@tribehr.com',
+	// 			__('New company created id: %s', $this->data['Company']['id']),
+	// 			__('New company was created'),
+	// 			'default'
+	// 			);
+	// 	}
+	// }
 
 	public function getRelatedJobs($companyID) {
 		return $this->Job->find('all', array(
