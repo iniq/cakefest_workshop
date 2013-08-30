@@ -34,4 +34,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $components = array('Session', 'DebugKit.Toolbar');
+// this fucked up, he went too fast. See the helper for the general idea?
+	// public $helpers = array(
+	// 	'Form' => array('className' => 'AppForm'),
+	// 	);
 }
